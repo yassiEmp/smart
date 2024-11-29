@@ -4,8 +4,8 @@ const Home = () => {
   return (
     <section className="relative w-[320px] h-[658px] bg-gray-200 flex flex-col justify-center items-center p-0 overflow-hidden border border-red-600">
       <section className="w-[95%] h-[95%] border border-black relative top-0 left-0">
-        <section className="w-full h-[167px] bg-black rounded-3xl">
-          <div>
+        <section className="w-full h-[167px] bg-gray-500 rounded-3xl">
+          <div className="border border-black h-[80px] flex p-2 ">
             <div>
               <h2>bienvenue a la maison</h2>
               <p>mr arnaud</p>
