@@ -85,7 +85,7 @@ const Home = () => {
               Voir
             </p>
           </div>
-          <article className="border border-black h-[340px] overflow-x-auto flex flex-wrap gap-5">
+          <article className="h-[340px] overflow-x-auto flex flex-wrap gap-2 p-1">
             <Device imag={porte} name={"clim 2"}/>
             <Device imag={lampe} name={"lampe"}/>
             <Device imag={lampe} name={"lampe"}/>
