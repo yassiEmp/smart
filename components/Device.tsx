@@ -2,14 +2,34 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React, { useState } from "react";
+
+const lampe1= {
+  noms: "lampe2",
+  id: 2,
+  on: ["D1:alum","D2:etein","D3:etein"],
+  off: ["D1:etein","D2:alum"]
+ }
 const Device = (props: { imag: StaticImport; name: string }) => {
   const [on, setOn] = useState(true);
+
+
+  
+  //rest api code 
   async function handleRequest(device: string): Promise<void> {
-    const link = "http://192.168.1.1/";
-    const result = await fetch(link + device, { cache: "no-cache" });
-    console.log(result)
-    return ;
+
+    const linkOn = "http://192.168.1.13/pin/on?pin=D4";
+    const linkOff = "http://192.168.1.13/pin/off?pin=D4";
+    const result = await fetch(on ? linkOff : linkOn , {
+      cache: "no-cache",
+      method: "GET",
+      mode: "no-cors",
+    });
+    console.log(result);
+    return;
   }
+
+
+
   return (
     <div className="relative overflow-hidden w-[140px] bg-[#ffecca] h-52 rounded-xl flex flex-col justify-around shado">
       <div className="top-0 max-h-[70%] z-10">
@@ -47,3 +67,13 @@ const Device = (props: { imag: StaticImport; name: string }) => {
 };
 
 export default Device;
+
+/**
+ * {
+ *  noms: "lampe2",
+ *  id: 2,
+ *  on: [D1:alum,D2:etein,D3:etein],
+ *  off: [D1:etein,D2:alum]
+ * }
+ *
+ */
